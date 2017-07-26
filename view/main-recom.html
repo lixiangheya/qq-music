@@ -1,0 +1,43 @@
+<ion-view>
+	<ion-content>
+		<ion-slide-box id="qq-slider" does-continue="true" auto-play="true" slide-interval="1500">
+			<ion-slide ng-repeat="pic in picSlider">
+				<img ng-src="{{pic}}" alt="">
+			</ion-slide>
+		</ion-slide-box>
+		<div id="qq-radio" class="recom-box">
+			<h3>电台</h3>
+			<div class="row no-padding">
+				<div class="col no-padding" ng-repeat="radio in radiolist">
+					<div class="recom-innerbox light-bg">
+						<div class="imgbox">
+							<img ng-src="{{radio.img}}" alt="">
+						</div>
+						<p class="tlt" ng-bind="radio.tlt"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="qq-hot" class="recom-box">
+			<h3>热门歌单</h3>
+			<div class="row no-padding">
+				<div class="col col-50 no-padding" ng-repeat="hot in hotlist">
+					<div class="recom-innerbox light-bg">
+						<div class="imgbox">
+							<img ng-src="{{hot.img}}" alt="">
+							<div class="hot"><i class="icon ion-headphone"></i> <span ng-bind="hot.hot"></span></div>
+						</div>
+						<p class="tlt" ng-bind="hot.tlt"></p>
+						<p class="txt" ng-bind="hot.txt"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p class="list_more">去客户端发现更多好音乐 ></p>
+			<div class="version_tab">查看电脑版网页</div>
+			<div class="footer_logo">QQ音乐</div>
+			<p class="copyright">Copyright © 1998 - 2016 Tencent. All Rights Reserved.</p>
+		</footer>
+	</ion-content>
+</ion-view>

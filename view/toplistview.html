@@ -1,0 +1,19 @@
+<ion-content id="toplistview" ng-style="{'background-color': color}">
+	<header ng-style="headimg">
+		<div class="focus_info">
+			<h1 ng-bind="listdata.listname"></h1>
+			<p ng-bind="listdata.update_time+' 更新'"></p>
+			<i class="focus_play" ng-click="play(listdata.songlist[0])"></i>
+		</div>
+		<div class="focus_gradient" ng-style="{'color': color}"></div>
+	</header>
+	<ion-list>
+		<ion-item ng-repeat="song in listdata.songlist" ng-click="play(song)">
+			<p class="index" ng-bind="$index+1"></p>
+			<div class="songinfo">
+				<h4 ng-bind="song.songname"></h4>
+				<p ng-bind="song.singername"></p>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>

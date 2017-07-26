@@ -1,0 +1,34 @@
+<ion-view cache-view="false">
+	<div class="song-bg" ng-style="songbg"></div>
+
+	<ion-header-bar class="songheader" align-title="left">
+		<img ng-src="{{song.albumpic_small}}">
+		<div class="song-info">
+			<h1 ng-bind="song.songname"></h1>
+			<p ng-bind="song.singername"></p>
+			<i class="icon-play" ng-class="{true: 'play', false: 'pause'}[isPaused()]" ng-click="playOrPause()"></i>
+		</div>
+	</ion-header-bar>
+
+	<ion-content id="songpage" delegate-handle="lyricPage">
+		<ion-list>
+			<ion-item ng-repeat="lyric in lyricArr" ng-class="{current: $index==currentIndex}">
+				<p ng-bind="lyric[1]"></p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+
+	<ion-footer-bar class="songfooter no-padding">
+		<audio id="player" ng-src="{{songurl}}" autoplay="autoplay"></audio>
+		<div class="playerCtrl">
+			<div class="item range">
+				<span ng-bind="currentTime.format()"></span>
+				<div class="rangebox">
+					<div class="progress-liner" ng-style="{width: progress+'%'}"></div>
+					<input type="range" ng-max="100" ng-model="progress" ng-change="change()">
+				</div>
+				<span ng-bind="duration.format()"></span>
+			</div>
+		</div>
+	</ion-footer-bar>
+</ion-view>

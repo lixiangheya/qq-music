@@ -1,0 +1,27 @@
+<ion-view>
+	<ion-content class="light-bg">
+		<div class="search-box">
+			<form ng-submit="toSearch()">
+				<label class="item item-input">
+					<i class="icon ion-ios-search placeholder-icon"></i>
+					<input type="text" ng-model="search.text" placeholder="搜索歌曲、歌单、专辑" ng-focus="searchFocus()">
+				</label>
+				<span class="del-btn" ng-if="isDel()" ng-click="delClick()"></span>
+				<span class="cancel-btn" ng-if="isDel()||isCancel" ng-click="cancelClick()">取消</span>
+			</form>
+		</div>
+		<ion-list ng-if="listOpen" class="search-result-list">
+			<ion-item ng-repeat="song in results.contentlist" class="search-result" ng-click="play(song)">
+				<i class="icon"></i>
+				<h6 ng-bind="song.songname"></h6>
+				<p ng-bind="song.singername"></p>
+			</ion-item>
+		</ion-list>
+		<div class="hot-keyword" ng-if="!(isDel()||isCancel)">
+			<h3>热门搜索</h3>
+			<ul class="keyword-list">
+				<li ng-repeat="keyword in keywordArr" ng-class="{red: keyword.hot}" ng-click="keywordClick(keyword.key)" ng-bind="keyword.key"></li>
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>

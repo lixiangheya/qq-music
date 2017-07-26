@@ -1,0 +1,119 @@
+#toplistview header {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+}
+#toplistview header::after {
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+#toplistview header .focus_info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	padding: 0 15px 25px;
+	box-sizing: border-box;
+}
+#toplistview header .focus_info h1 {
+	height: 36px;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 36px;
+	color: #fff;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin: 0;
+}
+#toplistview header .focus_info p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #fff;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin: 0;
+}
+#toplistview header .focus_gradient {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	background-image: -webkit-linear-gradient(top,transparent,currentColor 80%);
+}
+#toplistview header .focus_gradient::after {
+	content: "";
+	display: block;
+	padding-top: 60%;
+}
+#toplistview header .focus_info .focus_play {
+	position: absolute;
+	right: 15px;
+	top: 4px;
+	display: block;
+	width: 48px;
+	height: 48px;
+	margin-left: 10px;
+	border: solid 3px #fff;
+	border-radius: 999px;
+}
+#toplistview header .focus_info .focus_play::before {
+	content: "";
+	position: absolute;
+	top: 13px;
+	left: 17px;
+	height: 0;
+	width: 0;
+	line-height: 999em;
+	overflow: hidden;
+	border-color: transparent transparent transparent #fff;
+	border-width: 9px 15px;
+	border-style: solid;
+}
+#toplistview ion-list .item {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	padding: 0;
+	height: 60px;
+	border: 0 none;
+	background-color: transparent;
+	color: #fff;
+}
+#toplistview ion-list .item .index {
+	flex: 0 0 50px;
+	color: #fff;
+	font-size: 18px;
+	padding-bottom: 12px;
+	text-align: center;
+}
+#toplistview ion-list .item .songinfo {
+	flex: 1;
+	border-bottom: 1px solid rgba(255,255,255,.15);
+}
+#toplistview ion-list .item .songinfo h4 {
+	color: #fff;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 22px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#toplistview ion-list .item .songinfo p {
+	color: #fff;
+	font-size: 14px;
+	line-height: 1.5;
+	opacity: .6;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
